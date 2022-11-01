@@ -3,13 +3,14 @@ const nameInput = document.querySelector("#name");
 
 let todos = JSON.parse(localStorage.getItem("todos")) || [];
 
+// RENDER USERNAME
+const username = localStorage.getItem("username") || "";
+nameInput.value = username;
+
 // SAVE USERNAME
 nameInput.addEventListener("change", (e) => {
   localStorage.setItem("username", e.target.value);
 });
-// RENDER USERNAME
-const username = localStorage.getItem("username") || "";
-nameInput.value = username;
 
 // SUBMIT FORM
 newTodoForm.addEventListener("submit", (e) => {
@@ -28,6 +29,8 @@ newTodoForm.addEventListener("submit", (e) => {
 
   DisplayTodos();
 });
+
+DisplayTodos();
 
 // RENDER TODOS
 function DisplayTodos() {
@@ -114,7 +117,7 @@ function editTodos() {
         todos[index].content = e.target.value;
         localStorage.setItem("todos", JSON.stringify(todos));
 
-        DisplayTodos();
+        // DisplayTodos();
       });
     });
   });
@@ -131,4 +134,5 @@ function deleteTodos() {
       DisplayTodos();
     });
   });
+    // DisplayTodos();
 }
