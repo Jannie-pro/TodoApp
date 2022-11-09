@@ -132,7 +132,7 @@ input[type="checkbox"] {
 
 .bubble::after {
     content: "";
-    display: block;
+    /* display: block; */
     opacity: 0;
     width: 0px;
     height: 0px;
@@ -235,4 +235,44 @@ input:checked~.bubble::after {
 .todo-item.done .todo-content input {
     text-decoration: line-through;
     color: var(--grey);
+}
+
+@media (min-width: 768px) {
+    section {
+        margin-top: 3rem;
+        margin-bottom: 3rem;
+    }
+    .greeting .title,
+    .greeting .title input {
+        font-size: 2rem;
+    }
+    .create-todo input[type="text"] {
+        font-size: 1.5rem;
+        padding: 1.5rem;
+        margin-bottom: 2rem;
+        width: 63%;
+    }
+    .create-todo .options {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .create-todo .options label {
+        padding: 2rem;
+    }
+    .create-todo .options label div {
+        font-size: 1.5rem;
+        margin-top: 1.5rem;
+    }
+    .create-todo input[type="submit"] {
+        font-size: 1.5rem;
+        width: 66%;
+    }
+    .todo-item .todo-content input {
+        font-size: 1.5rem;
+    }
+    .todo-item .actions button {
+        padding: 0.75rem;
+    }
+    .todo-list .todo-item{
+        width: 63%;
+    }
 }

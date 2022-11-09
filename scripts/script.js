@@ -109,7 +109,7 @@ function editTodos() {
     const edit = todoItem.querySelector(".edit");
     const content = todoItem.querySelector(".todo-content");
     const input = content.querySelector("input");
-    edit.addEventListener("click", (e) => {
+    edit.addEventListener("click", () => {
       input.removeAttribute("readonly");
       input.focus();
       input.addEventListener("blur", (e) => {
